@@ -48,6 +48,11 @@ git commit -am "trigger build"
 ````
 
 * 3. Run kubernetes deployment pipelines on Jenkins. 
+````
+Build a pipeline job on Jenkins with these parameters:
+git-url:https://github.com/dirakx1/application.git
+Pipeline by jenkinsfile
+````
 
 ## Considerations
 
