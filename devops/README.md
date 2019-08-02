@@ -5,7 +5,7 @@
 
 ## Terraform 
 
-IAC solution for timeoff, basically it: (documented on devops/terraform):
+IAC solution for timeoff, basically it: (documented on **devops/terraform**):
 
 * Creates a GCP proyect.
 * Creates GKE clusters
@@ -16,7 +16,7 @@ We could use here other kind of clouds like aws, taking the advantage of terrafo
 ## CI/CD
 
 ### CI
-* We are going to use circleCI for making CI pipelines. (documented on devops/circleci)
+* We are going to use circleCI for making CI pipelines. (documented on **devops/circleci**)
 but we could also use other tools for this purpose, like Gitlab pipelines or Jenkins pipelines
 We used circleci  for easy interaction with github.
 
@@ -24,11 +24,11 @@ We used circleci  for easy interaction with github.
 
 * We are going to use here jenkins pipelines that make the opportunity of an easy interaction 
 with GKE clusters. (documented on devops/k8s), to be able to interact with the GKE Jenkins will 
-need the "google kubernetes plugin" and be run with dockerfile (devops/k8s/JenkinsDockerfile)
+need the "google kubernetes plugin" and be run with dockerfile (**devops/k8s/JenkinsDockerfile**)
 
 ## HTTPS/DNS
 
-* Application will be exposed via the GKE enpoint, that is defined on k8s/ingress.yml as
+* Application will be exposed via the GKE enpoint, that is defined on **k8s/ingress.yml** as
 timeoff-static-ip, we have to buy a public domain name for this ip and also we have two ways to implement
 TLS. one is via buying a certifcate and the second is via adding google self managed https certificates.  
 
