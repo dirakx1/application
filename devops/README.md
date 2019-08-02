@@ -2,9 +2,9 @@
 
 ## Proposed arcuitecture
 
-## Terraform on GCP 
+## Terraform 
 
-IAC solution for timoff, basically it:
+IAC solution for timeoff, basically it (documented on devops/terraform:
 
 * Creates a GCP proyect.
 * Creates GKE clusters
