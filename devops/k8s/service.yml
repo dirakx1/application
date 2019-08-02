@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Service
+metadata:
+
+  labels:
+    run: ms-gas-station
+  name: ms-gas-station
+  namespace: default
+  selfLink: /api/v1/namespaces/default/services/timeoff
+
+spec:
+  externalTrafficPolicy: Cluster
+  ports:
+  - nodePort: 30924
+    port: 9002
+    protocol: TCP
+    targetPort: 9002
+  selector:
+    run: timeoff
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}
