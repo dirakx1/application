@@ -44,7 +44,5 @@ docker exec -ti --user root alpine_timeoff /bin/sh && npm start
 
 * We will use GKE, Gcloud sdk and GCR (google cloud docker registry), but other cloud providers could be use the same 
 referenced solution. 
-* We are not giving much tought on security or IAC tests, but a DevSecOps solution could be achieved with this development.  
-* We are not describing how to make a public DNS and its certificates to the GKE enpoint (were timeoff is diplayed).  
-
+* We are not giving much tought IAC (infrastructure as a code) tests.
 
