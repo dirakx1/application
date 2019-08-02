@@ -16,6 +16,7 @@ We could use here other kind of clouds like aws, taking the advantage of terrafo
 * We are going to use circleCI for making CI/CD pipelines. (documented on devops/circleci)
 but we could also use other tools for this purpose, like Gitlab pipelines or Jenkins pipelines 
 
+### General process for pipelines:
 ````
 git clone https://github.com/dirakx1/application 
 cd application
