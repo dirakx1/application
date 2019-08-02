@@ -4,8 +4,11 @@
 
 ## Terraform on GCP 
 
-* Needed recipes for deploying app on GCE
-1 . Create project
+IAC solution for timoff, basically it:
+
+* Creates a GCP proyect.
+* Creates GKE clusters
+* Creates all needed initial gcloud interacions
 
 
 ## CI/CD
