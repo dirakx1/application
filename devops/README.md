@@ -31,7 +31,7 @@ npm test
 
 ## Considerations
 
-* we will use GKE, Gcloud and GCR (google cloud registry, but other cloud providers could be use the same 
+* We will use GKE, Gcloud and GCR (google cloud registry, but other cloud providers could be use the same 
 referenced solution. 
 
 
