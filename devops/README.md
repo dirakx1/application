@@ -9,7 +9,7 @@ IAC solution for timeoff, basically it: (documented on devops/terraform):
 
 * Creates a GCP proyect.
 * Creates GKE clusters
-* Creates all needed initial gcloud interacions
+* Creates all needed initial gcloud interactions
 
 We could use here other kind of clouds like aws, taking the advantage of terraform being multicloud.  
 
@@ -26,25 +26,28 @@ We used circleci  for easy interaction with github.
 with GKE clusters. (documented on devops/k8s), to be able to interact with the GKE Jenkins will 
 need the "google kubernetes plugin" and be run with dockerfile (devops/k8s/JenkinsDockerfile)
 
-
-### General process for pipelines:
-````
-git clone https://github.com/dirakx1/application 
-cd application
-npm install 
-npm test
-
-if test are ok :
-docker run -d -p 3000:3000 --name alpine_timeoff timeoff
-docker exec -ti --user root alpine_timeoff /bin/sh && npm start 
-
-````
-
 ## HTTPS/DNS
 
 * Application will be exposed via the GKE enpoint, that is defined on k8s/ingress.yml as
 timeoff-static-ip, we have to buy a public Domain name for this ip and also we have two ways to implement
 TLS. one is via buying a certifcate and the second is via adding google self managed https certificates.  
+
+## Solution workflow. 
+
+* 1. Run terraform recipes:
+````
+terraform init 
+terrafrom plan
+terraform apply
+````
+* 2. Connect and run circleci pipelines
+````
+Trigguer build with a change 
+Edit readme and commit 
+git commit -am "triguer build" 
+````
+
+* 3. Run kubernetes deployment pipelines on Jenkins. 
 
 ## Considerations
 
