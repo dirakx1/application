@@ -2,6 +2,7 @@
 
 ## Proposed arcuitecture
 ![](app.jpeg)
+
 ## Terraform 
 
 IAC solution for timeoff, basically it (documented on devops/terraform):
@@ -15,8 +16,9 @@ We could use here other kind of clouds like aws, taking the advantage of terrafo
 ## CI/CD
 
 ### Ci
-* We are going to use circleCI for making CI/CD pipelines. (documented on devops/circleci)
-but we could also use other tools for this purpose, like Gitlab pipelines or Jenkins pipelines 
+* We are going to use circleCI for making CI pipelines. (documented on devops/circleci)
+but we could also use other tools for this purpose, like Gitlab pipelines or Jenkins pipelines
+We used circleci  for easy interaction with github.
 
 ### CD 
 
@@ -42,7 +44,7 @@ docker exec -ti --user root alpine_timeoff /bin/sh && npm start
 
 * We will use GKE, Gcloud sdk and GCR (google cloud registry, but other cloud providers could be use the same 
 referenced solution. 
-* We are not giving much tought on security or IAC tests 
+* We are not giving much tought on security or IAC tests, but a DEvsecops solution could be achieved with this development.  
 
 
 
