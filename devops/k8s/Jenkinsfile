@@ -1,6 +1,22 @@
 pipeline {
     agent { label: "default" }
     stages {
+        // run if a change is made on code 
+        stage('Log into gcloud'){
+            steps {
+              // gcloud sdk
+              withCredentials([file(credentialsId: 'projectid', variable:'GOOGLE_APPLICATION_CREDENTIALS' )]){
+                        sh 'echo "${GOOGLE_APPLICATION_CREDENTIALS}"'
+                        sh '/root/google-cloud-sdk/bin/gcloud auth activate-service-account --key-file $GOOGLE_APPLICATION_CREDENTIALS' 
+                        // set project Id
+                        sh '/root/google-cloud-sdk/bin/gcloud config set project project-id' // project id from terraform 
+                        sh '/root/google-cloud-sdk/bin/gcloud container clusters get-credentials projectid --zone=us-east1-b' //zones could be differentr between envs      
+                        sh '/root/google-cloud-sdk/bin/gcloud --quiet components update'
+                        sh '/root/google-cloud-sdk/bin/gcloud --quiet docker tag timeoff  us.gcr.io/projectid/timeoff:latest --verbosity debug'
+                        sh '/root/google-cloud-sdk/bin/gcloud --quiet docker push us.gcr.io/projectid/timeoff:latest --verbosity debug' //todo version images
+                      }
+            }
+        
         stage('Deploy Production) {   // we can have other steps here as staging, qa. dev etc 
             steps{
                 git url: 'https://github.com/dirakx1/application.git'
@@ -9,7 +25,7 @@ pipeline {
                         clusterName: "nameoflcuster", // deployed with terraform
                         zone: "us-east1-b",
                         manifestPattern: 'k8s/',
-                        credentialsId: "nameofcredentials", // stored-on-jenkins
+                        credentialsId: "nameofcredentials", // stored-on-jenkins credentials
                         verifyDeployments: true])
             }
         }
