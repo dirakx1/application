@@ -2,7 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   annotations:
-    kubernetes.io/ingress.global-static-ip-name: timeoff-static-ip # should be defined with this name on gcp
+    kubernetes.io/ingress.global-static-ip-name: timeoff-static-ip # should be defined with this name on gcp as external ip
   name: fanout-ingress
 spec:
   rules:
