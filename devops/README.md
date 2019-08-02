@@ -23,7 +23,8 @@ We used circleci  for easy interaction with github.
 ### CD 
 
 * We are going to use here jenkins pipelines that make the opportunity of an easy interaction 
-with GKE clusters. (documented on devops/k8s)
+with GKE clusters. (documented on devops/k8s), to be able to interact with the GKE Jenkins will 
+need the "google kubernetes plugin" and be run with dockerfile (devops/k8s/JenkinsDockerfile)
 
 
 ### General process for pipelines:
