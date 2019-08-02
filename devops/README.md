@@ -42,7 +42,7 @@ docker exec -ti --user root alpine_timeoff /bin/sh && npm start
 ## HTTPS/DNS
 
 * Application will be exposed via the GKE enpoint, that is defined on k8s/ingress.yml as
-timeoff-static-ip, we have to buy a public DNS for this ip and also we have to ways to implement
+timeoff-static-ip, we have to buy a public Domain name for this ip and also we have two ways to implement
 TLS. one is via buying a certifcate and the second is via adding google self managed https certificates.  
 
 ## Considerations
