@@ -12,14 +12,14 @@
 * Travis, when change 
 
 
-'''
+````
 git clone https://github.com/dirakx1/application 
 cd application
 npm install 
 npm test 
 npm start 
 
-'''
+````
 
 When change 
 
