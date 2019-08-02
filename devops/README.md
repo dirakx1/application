@@ -13,8 +13,16 @@ IAC solution for timeoff, basically it (documented on devops/terraform):
 We could use here other kind of clouds like aws, taking the advantage of terraform being multicloud.  
 
 ## CI/CD
+
+### Ci
 * We are going to use circleCI for making CI/CD pipelines. (documented on devops/circleci)
 but we could also use other tools for this purpose, like Gitlab pipelines or Jenkins pipelines 
+
+### CD 
+
+* We are going to use here jenkins pipelines that make the opportunity of an easy interaction 
+with GKE clusters. (documented on devops/k8s)
+
 
 ### General process for pipelines:
 ````
