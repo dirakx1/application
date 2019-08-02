@@ -37,7 +37,7 @@ TLS. one is via buying a certifcate and the second is via adding google self man
 * 1. Run terraform recipes:
 ````
 terraform init 
-terrafrom plan
+terraform plan
 terraform apply
 ````
 * 2. Connect and run circleci pipelines
@@ -53,6 +53,7 @@ Build a pipeline job on Jenkins with these parameters:
 git-url:https://github.com/dirakx1/application.git
 Pipeline by jenkinsfile
 ````
+* The Job should be automatically run if an script parsing test-results.xml. prints out "ok". 
 
 ## Considerations
 
