@@ -1,0 +1,40 @@
+
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: timeoff
+spec:
+  selector:
+    matchLabels:
+      run: timeoff
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: timeoff
+    spec:
+      containers:
+        - name: timeoff      
+          image: us.gcr.io/projectid/timeoff:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 9002
+              protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          readinessProbe:
+            httpGet:
+              path: /*
+              port: 9002
+              scheme: HTTP
+            initialDelaySeconds: 120
+            periodSeconds: 30
+            successThreshold: 1
+            failureThreshold: 5
+            timeoutSeconds: 3
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
