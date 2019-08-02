@@ -33,7 +33,7 @@ docker exec -ti --user root alpine_timeoff /bin/sh && npm start
 
 * We will use GKE, Gcloud and GCR (google cloud registry, but other cloud providers could be use the same 
 referenced solution. 
-* We are not giving uch tought on security. 
+* We are not giving much tought on security or IAC tests 
 
 
 
