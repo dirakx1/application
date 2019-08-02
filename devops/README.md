@@ -5,7 +5,7 @@
 
 ## Terraform 
 
-IAC solution for timeoff, basically it (documented on devops/terraform):
+IAC solution for timeoff, basically it: (documented on devops/terraform):
 
 * Creates a GCP proyect.
 * Creates GKE clusters
@@ -15,7 +15,7 @@ We could use here other kind of clouds like aws, taking the advantage of terrafo
 
 ## CI/CD
 
-### Ci
+### CI
 * We are going to use circleCI for making CI pipelines. (documented on devops/circleci)
 but we could also use other tools for this purpose, like Gitlab pipelines or Jenkins pipelines
 We used circleci  for easy interaction with github.
@@ -42,9 +42,9 @@ docker exec -ti --user root alpine_timeoff /bin/sh && npm start
 
 ## Considerations
 
-* We will use GKE, Gcloud sdk and GCR (google cloud registry, but other cloud providers could be use the same 
+* We will use GKE, Gcloud sdk and GCR (google cloud docker registry), but other cloud providers could be use the same 
 referenced solution. 
-* We are not giving much tought on security or IAC tests, but a DEvsecops solution could be achieved with this development.  
-
+* We are not giving much tought on security or IAC tests, but a DevSecOps solution could be achieved with this development.  
+* We are not describing how to make a public DNS and its certificates to the GKE enpoint (were timeoff is diplayed).  
 
 
