@@ -24,7 +24,6 @@ RUN CLOUDSDK_CORE_DISABLE_PROMPTS=1 ./google-cloud-sdk/install.sh
 RUN /bin/bash -c "source /root/google-cloud-sdk/completion.bash.inc"
 RUN /bin/bash -c "source /root/google-cloud-sdk/path.bash.inc"
 RUN echo $0
-# We need to know instal path to added to pipelines
 RUN which gcloud
 
 
