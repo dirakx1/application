@@ -11,12 +11,12 @@ ocals {
 
 # [START] APIs definition - ENABLE all_apis
 
-#resource "google_project_service" "enabling_api" {
-#  count              = "${length(local.all_apis)}"
-#  project            = "${var.project_name}"
-#  service            = "${element(local.all_apis, count.index)}"
-#  disable_on_destroy = false
-#}
+resource "google_project_service" "enabling_api" {
+  count              = "${length(local.all_apis)}"
+  project            = "${var.project_name}"
+  service            = "${element(local.all_apis, count.index)}"
+  disable_on_destroy = false
+}
 
 # [END] APIs definition
 
