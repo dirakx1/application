@@ -42,9 +42,9 @@ terraform apply
 ````
 * 2. Connect and run circleci pipelines
 ````
-Trigguer build with a change 
+Trigger build with a change 
 Edit readme and commit 
-git commit -am "triguer build" 
+git commit -am "trigger build" 
 ````
 
 * 3. Run kubernetes deployment pipelines on Jenkins. 
