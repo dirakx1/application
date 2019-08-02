@@ -1,7 +1,7 @@
 # Proposed Solution 
 
 ## Proposed arcuitecture
-
+![](app.jpeg)
 ## Terraform 
 
 IAC solution for timeoff, basically it (documented on devops/terraform:
