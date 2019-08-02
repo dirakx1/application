@@ -19,14 +19,13 @@ IAC solution for timeoff, basically it (documented on devops/terraform:
 git clone https://github.com/dirakx1/application 
 cd application
 npm install 
-npm test 
-npm start 
+npm test
+
+if test are ok :
+docker run -d -p 3000:3000 --name alpine_timeoff timeoff
+docker exec -ti --user root alpine_timeoff /bin/sh && npm start 
 
 ````
-
-When change 
-
-npm test 
 
 
 ## Considerations
