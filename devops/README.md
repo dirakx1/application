@@ -12,7 +12,7 @@ IAC solution for timeoff, basically it (documented on devops/terraform:
 
 
 ## CI/CD
-* We are going to use circleCI.  
+* We are going to use circleCI. (documented on devops/circleci)
 
 
 ````
