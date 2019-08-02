@@ -1,0 +1,31 @@
+FROM jenkinsci/blueocean
+USER root
+RUN apk add shadow
+RUN usermod --shell /bin/bash root
+RUN apk update 
+RUN apk add bash
+RUN apk add bash-completion
+
+# install python 
+RUN apk --update add python 
+
+# Install kubectl 
+RUN export k8sversion=v1.11.5
+RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$k8sversion/bin/linux/amd64/kubectl
+RUN chmod +x ./kubectl
+RUN mv ./kubectl /usr/local/bin/kubectl
+RUN  kubectl
+
+# Install gcloud
+RUN file="google-cloud-sdk-101.0.0-linux-x86_64.tar.gz"
+RUN link="https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/"
+RUN curl -L "$link""$file" | tar xz
+RUN CLOUDSDK_CORE_DISABLE_PROMPTS=1 ./google-cloud-sdk/install.sh
+RUN /bin/bash -c "source /root/google-cloud-sdk/completion.bash.inc"
+RUN /bin/bash -c "source /root/google-cloud-sdk/path.bash.inc"
+RUN echo $0
+# We need to know instal path to added to pipelines
+RUN which gcloud
+
+
+
