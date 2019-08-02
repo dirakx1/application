@@ -1,0 +1,18 @@
+pipeline {
+    agent { label: "default" }
+    stages {
+        stage('Deploy Production) {   // we can have other steps here as staging, qa. dev etc 
+            steps{
+                git url: 'https://github.com/dirakx1/application.git'
+                step([$class: 'KubernetesEngineBuilder', 
+                        projectId: "project-id",  // deployed with terraform 
+                        clusterName: "nameoflcuster", // deployed with terraform
+                        zone: "us-east1-b",
+                        manifestPattern: 'k8s/',
+                        credentialsId: "nameofcredentials", // stored-on-jenkins
+                        verifyDeployments: true])
+            }
+        }
+        
+    }
+}
