@@ -7,7 +7,7 @@
 
 IAC solution for timeoff, basically it: (documented on **devops/terraform**):
 
-* Creates a GCP proyect.
+* Creates a GCP project.
 * Creates GKE clusters
 * Creates all needed initial gcloud interactions
 
