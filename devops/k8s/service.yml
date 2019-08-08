@@ -3,8 +3,8 @@ kind: Service
 metadata:
 
   labels:
-    run: ms-gas-station
-  name: ms-gas-station
+    run: timeoff
+  name: timeoff
   namespace: default
   selfLink: /api/v1/namespaces/default/services/timeoff
 
